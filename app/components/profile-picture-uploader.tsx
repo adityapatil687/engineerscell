@@ -11,7 +11,7 @@ export interface ProfilePictureUploaderRef {
   resetImage: () => void;
 }
 
-const MAX_FILE_SIZE = 2 * 1024 * 1024; // 2MB
+const MAX_FILE_SIZE = 256 * 1024; // 256 KB
 
 const ProfilePictureUploader = forwardRef<ProfilePictureUploaderRef, ProfilePictureUploaderProps>(
   ({ onImageUpload }, ref) => {
@@ -38,7 +38,7 @@ const ProfilePictureUploader = forwardRef<ProfilePictureUploaderRef, ProfilePict
       if (file) {
         // Validate file size
         if (file.size > MAX_FILE_SIZE) {
-          setError('Image size must be less than 2 MB.');
+          setError('Image size must be less than 256 KB.');
           setPreviewUrl(null);
           return;
         }
