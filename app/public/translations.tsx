@@ -5,7 +5,7 @@ const translations: LanguageTranslations = {
   English: {
     navbarTitle: "Engineers Cell",
     selectLanguage: "Select Language",
-    title: "User Information Form",
+    title: "Member Registration Form",
     uploadPhoto: "Upload Photo",
     name: "Name",
     email: "Email",
@@ -21,7 +21,7 @@ const translations: LanguageTranslations = {
   हिन्दी: {
     navbarTitle: "इंजीनियर्स सेल",
     selectLanguage: "भाषा चुनें",
-    title: "उपयोगकर्ता जानकारी फॉर्म",
+    title: "सदस्य पंजीकरण फॉर्म",
     uploadPhoto: "फोटो अपलोड करें",
     name: "नाम",
     email: "ईमेल",
@@ -37,7 +37,7 @@ const translations: LanguageTranslations = {
   मराठी: {
     navbarTitle: "इंजीनियर्स सेल",
     selectLanguage: "भाषा निवडा",
-    title: "वापरकर्त्याचा माहिती फॉर्म",
+    title: "सदस्य नोंदणी फॉर्म",
     uploadPhoto: "फोटो अपलोड करा",
     name: "नाव",
     email: "ईमेल",
