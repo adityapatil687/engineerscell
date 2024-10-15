@@ -57,6 +57,19 @@ export default function Form() {
     profilePictureUploaderRef.current?.resetImage();
   };
 
+  const errorMessages: Record<number, string> = {
+    409: "User already registered with this email or phone number.",
+    404: "No users found.",
+    500: "Failed to initialize database.",
+    // Add more mappings if needed
+    // You can also handle generic server errors if desired
+    // e.g., default: "Server error occurred."
+  };
+
+  const handleErrorMessage = (statusCode: number) => {
+    const message = errorMessages[statusCode] || "An unexpected error occurred.";
+    alert(message);
+  };
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!name || !email || !phone || !district || !taluka || !branch) {
@@ -96,25 +109,24 @@ export default function Form() {
         }
       );
 
-      if (!response.ok)
+      if (!response.ok) {
+        handleErrorMessage(response.status); // Call the error handler with status code
         throw new Error(`HTTP error! status: ${response.status}`);
+      }
 
       const result = await response.json();
 
       if (result.platformId) {
         setPlatformId(result.platformId);
-        setIsSuccessDialogOpen(true);
         resetForm();
+        setIsSuccessDialogOpen(true);
       } else {
-        throw new Error(
-          "Registration successful, but no Platform ID was returned."
-        );
+        throw new Error("Registration successful, but no Platform ID was returned.");
       }
+      
     } catch (err) {
       console.error("Error submitting form:", err);
-      setError(
-        err instanceof Error ? err.message : "An unexpected error occurred"
-      );
+      alert("An unexpected error occurred."); // Fallback for unexpected errors
     } finally {
       setLoading(false);
     }
@@ -242,7 +254,6 @@ export default function Form() {
             {loading ? "Submitting..." : translations[language].submit}
           </button>
         </form>
-        {error && <div className="mt-4 text-red-600 text-center">{error}</div>}
         <SuccessDialog
           isOpen={isSuccessDialogOpen}
           onClose={() => setIsSuccessDialogOpen(false)}
