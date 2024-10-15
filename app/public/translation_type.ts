@@ -14,6 +14,11 @@ export interface Translations {
   message: string;
   submit: string;
   copyright: string;
+  
+  // New keys added
+  location?: string;        // Optional key for location
+  scanQR?: string;         // Optional key for scanning QR code
+  joinWhatsApp?: string;   // Optional key for joining WhatsApp group
 }
 
 export interface LanguageTranslations {

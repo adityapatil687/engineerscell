@@ -43,7 +43,7 @@ export default function Navbar() {
           <div className="-mr-2 flex md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="bg-gray-400 p-2 rounded-md text-gray-800 hover:text-white hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-600"
+              className=" p-2 rounded-md text-gray-800 hover:text-white"
             >
               <span className="sr-only">Open main menu</span>
               {isMenuOpen ? (

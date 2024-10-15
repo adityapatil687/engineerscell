@@ -9,12 +9,11 @@ import { LanguageProvider } from '../context/LanguageContext'; // Adjust path as
 export default function Home() {
   return (
     <LanguageProvider>
-      <div className="bg-gray-100">
+      <div className=" h-screen flex flex-col space-y-100">
         <Navbar />
         <Form />
         <Footer />
       </div>
-      
     </LanguageProvider>
   );
 }
