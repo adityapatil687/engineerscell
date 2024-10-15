@@ -26,7 +26,7 @@ export default function Footer() {
           </h2>
           <iframe
             className="map-iframe"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.8917676127217!2d73.8424892!3d18.5337925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c1d6414a11e7%3A0x3eb84aa637f95df6!2s1%20Modibaug%20Apartment%20Complex!5e0!3m2!1sen!2sin!4v1728900125853!5m2!1sen!2sin"
+            src="https://maps.app.goo.gl/3pWZWEmvAw6r6NRLA?g_st=aw"
             height="200"
             style={{ border: "none" }}
             allowFullScreen
