@@ -126,7 +126,6 @@ export default function Form() {
       
     } catch (err) {
       console.error("Error submitting form:", err);
-      alert("An unexpected error occurred."); // Fallback for unexpected errors
     } finally {
       setLoading(false);
     }
